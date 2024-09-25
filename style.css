@@ -114,8 +114,8 @@ canvas {
 /* Solar system container */
 .solar-system {
     position: relative;
-    width: 60vmin;
-    height: 60vmin;
+    width: 90vw;
+    height: 90vw;
     z-index: 1; /* Solar system should be in front of stars */
 }
 
@@ -156,17 +156,17 @@ canvas {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 10vmin;
-    height: 10vmin;
-    margin-left: -5vmin;
-    margin-top: -5vmin;
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+    margin-top: -50px;
     background: radial-gradient(circle at 30% 30%, #ffd700, #ffa500);
     background-color: #ffdb58;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5vmin;
+    font-size: 18px;
     color: #000;
     text-align: center;
     cursor: pointer;
@@ -179,14 +179,14 @@ canvas {
 /* Planets */
 .planet {
     position: absolute;
-    width: 6vmin;
-    height: 6vmin;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 1.2vmin;
+    font-size: 14px;
     text-align: center;
     top: 50%;
     left: 50%;
