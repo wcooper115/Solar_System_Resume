@@ -114,8 +114,8 @@ canvas {
 /* Solar system container */
 .solar-system {
     position: relative;
-    width: 800px;
-    height: 800px;
+    width: 80vmin;
+    height: 80vmin;
     z-index: 1; /* Solar system should be in front of stars */
 }
 
@@ -156,17 +156,17 @@ canvas {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100px;
-    height: 100px;
-    margin-left: -50px;
-    margin-top: -50px;
+    width: 10vmin;
+    height: 10vmin;
+    margin-left: -5vmin;
+    margin-top: -5vmin;
     background: radial-gradient(circle at 30% 30%, #ffd700, #ffa500);
     background-color: #ffdb58;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
+    font-size: 1.5vmin;
     color: #000;
     text-align: center;
     cursor: pointer;
@@ -179,14 +179,14 @@ canvas {
 /* Planets */
 .planet {
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 6vmin;
+    height: 6vmin;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 14px;
+    font-size: 1.2vmin;
     text-align: center;
     top: 50%;
     left: 50%;
@@ -375,5 +375,27 @@ canvas {
 .sun:hover {
     transform: scale(1.2); /* Scale the size by 20% when hovered */
     transition: transform 0.3s ease; /* Smooth transition effect */
+}
+
+/* Mobile adjustments: Apply smaller planets and sun on mobile screens */
+@media (max-width: 768px) {
+    .solar-system {
+        width: 85vw;  /* Slightly larger system to accommodate mobile screens */
+        height: 85vw;
+    }
+
+    .planet {
+        width: 5vw;  /* Smaller planets for mobile */
+        height: 5vw;
+        font-size: 1.2vw; /* Adjust text size accordingly */
+    }
+
+    .sun {
+        width: 8vw;  /* Make the sun smaller on mobile */
+        height: 8vw;
+        margin-left: -4vw;
+        margin-top: -4vw;
+        font-size: 1.4vw;
+    }
 }
 
