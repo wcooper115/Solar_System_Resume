@@ -132,23 +132,23 @@ canvas {
 }
 
 .orbit.education-orbit {
-    width: 40vmin;
-    height: 40vmin;
+    width: 300px;
+    height: 300px;
 }
 
 .orbit.work-orbit {
-    width: 50vmin;
-    height: 50vmin;
+    width: 400px;
+    height: 400px;
 }
 
 .orbit.projects-orbit {
-    width: 60vmin;
-    height: 60vmin;
+    width: 500px;
+    height: 500px;
 }
 
 .orbit.skills-orbit {
-    width: 70vmin;
-    height: 70vmin;
+    width: 600px;
+    height: 600px;
 }
 
 /* Sun (center) */
