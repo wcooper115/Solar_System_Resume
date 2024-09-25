@@ -8,6 +8,7 @@
 /* Body background */
 body {
     background: radial-gradient(circle, #0d1b2a, #000); /* Deep space gradient */
+    background-color: #0d1b2a; /* fallback */
     font-family: 'Orbitron', sans-serif;
     display: flex;
     justify-content: center;
@@ -15,6 +16,10 @@ body {
     height: 100vh;
     overflow: hidden;
     position: relative;
+}
+
+canvas {
+    background-color: #0d1b2a; /* Set same fallback color as the body */
 }
 
 /* General rule for all planets and the sun */
