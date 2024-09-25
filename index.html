@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="starfield"></canvas>
+
+    <div class="solar-system">
+        <!-- Orbit Paths -->
+        <div class="orbit education-orbit"></div>
+        <div class="orbit work-orbit"></div>
+        <div class="orbit projects-orbit"></div>
+        <div class="orbit skills-orbit"></div>
+
+        <!-- Sun (center) -->
+        <div class="sun" id="aboutMe">About Me</div>
+
+        <!-- Planets -->
+        <div class="planet education" id="educationPlanet">
+            <div class="planet-content">Education</div>
+        </div>
+        <div class="planet work" id="workPlanet">
+            <div class="planet-content">Work Experience</div>
+        </div>
+        <div class="planet projects" id="projectsPlanet">
+            <div class="planet-content">Projects</div>
+        </div>
+        <div class="planet skills" id="skillsPlanet">
+            <div class="planet-content">Skills</div>
+        </div>
+    </div>
+
+    <!-- About Me Page (Initially hidden) -->
+    <div class="overlay hidden" id="aboutMePage">
+        <div class="overlay-content">
+            <h1>About Me</h1>
+            <h2>Professional Summary</h2>
+            <p>Senior at SMU majoring in Computer Science with a focus on Artificial Intelligence, experienced in developing AI-driven solutions and passionate about leveraging technology to solve business challenges.</p>
+            <h2>Key Attributes</h2>
+            <ul>
+                <li>Strong problem-solving skills with a focus on efficient, scalable solutions</li>
+                <li>Excellent communicator, adept at collaborating with cross-functional teams</li>
+                <li>Quick learner, always eager to adopt new technologies and methodologies</li>
+                <li>Committed to writing clean, maintainable code and following best practices</li>
+            </ul>
+            <h2>Career Objectives</h2>
+            <p>Currently seeking opportunities in AI consulting or engineering roles where I can apply my expertise in developing innovative, data-driven solutions to drive business success.</p>
+            <button class="backButton">Back</button>
+        </div>
+    </div>
+
+    <!-- Education Page (Initially hidden) -->
+    <div class="overlay hidden" id="educationPage">
+        <div class="overlay-content">
+            <h1>Education</h1>
+            <h2>University Degree</h2>
+            <p>Bachelor of Arts in Computer Science</p>
+            <p>Southern Methodist University, 2024</p>
+            <h2>Relevant Coursework</h2>
+            <ul>
+                <li>Artificial Intelligence</li>
+                <li>Machine Learning in Python</li>
+                <li>Intro to Natural Language Processing</li>
+                <li>Software Project Planning and Management</li>
+                <li>Senior Design</li>
+                <li>Data Structures</li>
+            </ul>
+            <button class="backButton">Back</button>
+        </div>
+    </div>
+
+    <!-- Work Experience Page (Initially hidden) -->
+    <div class="overlay hidden" id="workPage">
+        <div class="overlay-content">
+            <h1>Work Experience</h1>
+            <h2>Generative AI Extern</h2>
+            <p>Cognizant, 06/2024 - 08/2024</p>
+            <ul>
+                <li>Learned the fundamentals of Generative AI using Python through a nano-degree program with Udacity</li>
+                <li>Developed a program that used a pre-trained classifier to identify dog breeds</li>
+                <li>Created a program that used lightweight fine-tuning to classify sentiment</li>
+            </ul>
+            <h2>Analyst Intern</h2>
+            <p>Owl Investments, 05/2022 - 08/2023</p>
+            <ul>
+                <li>Helped underwrite and organize the development of a consumer product goods investment</li>
+                <li>Helped manage the investment when undergoing leadership changes</li>
+                <li>Learned and assisted with real estate investment opportunities in Argentina</li>
+                <li>Learned about green initiative programs to help offset carbon footprints</li>
+            </ul>
+            <button class="backButton">Back</button>
+        </div>
+    </div>
+
+    <!-- Projects Page (Initially hidden) -->
+    <div class="overlay hidden" id="projectsPage">
+        <div class="overlay-content">
+            <h1>Projects</h1>
+            <div class="project-list">
+                <h2>Sentiment Analysis Lightweight Fine-Tuning</h2>
+                <p>Fine-tuned GPT-2 using LoRa to significantly improve sentiment classification accuracy on the dair-ai/emotion dataset.</p>
+                <ul>
+                    <li>Improved accuracy from 29.05% to 79.95% through fine-tuning.</li>
+                    <li>Tokenized and processed the dataset for efficient training and evaluation.</li>
+                    <li>Implemented parameter-efficient fine-tuning and compared performance and model weights.</li>
+                </ul>
+                
+                <h2>Optimizing Neural Networks</h2>
+                <p>Developed neural networks using Keras to experiment with various optimizers for better performance.</p>
+                <ul>
+                    <li>Evaluated optimizers like Adam, RMSProp, and Adagrad for CNN models.</li>
+                    <li>Preprocessed data and compared model performance using AUC scores.</li>
+                    <li>Identified RMSProp as the most effective optimizer for the neural network.</li>
+                </ul>
+            </div>
+            <div class="github-link">
+                <p>For more projects, check out my <a href="https://github.com/" target="_blank">GitHub profile</a>.</p>
+            </div>
+            <button class="backButton">Back</button>
+        </div>
+    </div>
+
+    <!-- Skills Page (Initially hidden) -->
+    <div class="overlay hidden" id="skillsPage">
+        <div class="overlay-content">
+            <h1>Skills</h1>
+            <h2>Programming Languages</h2>
+            <ul>
+                <li>JavaScript (Node.js, React)</li>
+                <li>Python</li>
+                <li>Java</li>
+                <li>C++</li>
+            </ul>
+            <h2>Technologies & Tools</h2>
+            <ul>
+                <li>AWS (EC2, S3, Lambda, DynamoDB)</li>
+                <li>Docker & Kubernetes</li>
+                <li>Git & GitHub</li>
+                <li>MongoDB, PostgreSQL</li>
+                <li>RESTful API Design</li>
+            </ul>
+            <h2>Soft Skills</h2>
+            <ul>
+                <li>Team Leadership</li>
+                <li>Agile Methodologies</li>
+                <li>Technical Writing</li>
+                <li>Problem Solving</li>
+            </ul>
+            <button class="backButton">Back</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

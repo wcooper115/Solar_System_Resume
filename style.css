@@ -1,0 +1,374 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body background */
+body {
+    background: radial-gradient(circle, #0d1b2a, #000); /* Deep space gradient */
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* General rule for all planets and the sun */
+.planet, .sun {
+    font-family: 'Orbitron', sans-serif; /* Ensure the linked font is used */
+    text-transform: uppercase; /* Optional: makes all text uppercase for a futuristic feel */
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Lighter text colors for better readability and darker glow */
+.planet.education {
+    color: #5dade2; /* Lighter blue text */
+    text-shadow: 0 0 5px rgba(29, 79, 114, 0.6), 0 0 10px rgba(29, 79, 114, 0.4); /* Darker blue glow */
+    transform: translate(150px, 0) translate(-50%, -50%); /* Education planet's initial position */
+}
+
+.planet.work {
+    color: #58d68d; /* Lighter green text */
+    text-shadow: 0 0 5px rgba(20, 90, 50, 0.6), 0 0 10px rgba(20, 90, 50, 0.4); /* Darker green glow */
+    transform: translate(0px, 200px) translate(-50%, -50%); /* Work planet's initial position */
+}
+
+.planet.projects {
+    color: #f1948a; /* Lighter red text */
+    text-shadow: 0 0 5px rgba(123, 36, 28, 0.6), 0 0 10px rgba(123, 36, 28, 0.4); /* Darker red glow */
+    transform: translate(-250px, 0) translate(-50%, -50%); /* Projects planet's initial position */
+}
+
+.planet.skills {
+    color: #d2b4de; /* Lighter purple text */
+    text-shadow: 0 0 5px rgba(91, 44, 111, 0.6), 0 0 10px rgba(91, 44, 111, 0.4); /* Darker purple glow */
+    transform: translate(0px, -300px) translate(-50%, -50%);
+}
+
+.planet-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for scaling */
+}
+
+.planet-content:hover {
+    transform: scale(1.2); /* Scale the size by 20% when hovered */
+}
+
+/* Sun text effect (Very subtle dark glow) */
+.sun {
+    color: #b7950b !important; /* Bright yellow text color */
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(102, 85, 0, 0.3), 0 0 10px rgba(102, 85, 0, 0.15); /* Very dark yellow glow */
+}   
+
+/* Stars background */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure the stars stay behind the solar system */
+    background: transparent;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    z-index: -1; /* Ensure stars are behind everything */
+}
+
+/* Shooting stars (just small moving circles) */
+.shooting-star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0;
+    z-index: 0; /* Shooting stars should be visible above the stars but below planets */
+    animation: shooting 1.5s ease-in-out forwards;
+}
+
+/* Solar system container */
+.solar-system {
+    position: relative;
+    width: 800px;
+    height: 800px;
+    z-index: 1; /* Solar system should be in front of stars */
+}
+
+/* Orbit rings */
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.orbit.education-orbit {
+    width: 300px;
+    height: 300px;
+}
+
+.orbit.work-orbit {
+    width: 400px;
+    height: 400px;
+}
+
+.orbit.projects-orbit {
+    width: 500px;
+    height: 500px;
+}
+
+.orbit.skills-orbit {
+    width: 600px;
+    height: 600px;
+}
+
+/* Sun (center) */
+.sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+    margin-top: -50px;
+    background: radial-gradient(circle at 30% 30%, #ffd700, #ffa500);
+    background-color: #ffdb58;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #000;
+    text-align: center;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: inset -10px -10px 20px rgba(0,0,0,0.2), 0 0 10px var(--planet-color);
+    color: white;
+}
+.sun { --planet-color: #ffd700; --planet-color-dark: #ffa500; }
+
+/* Planets */
+.planet {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    z-index: 3; /* Planets should be above the orbits */
+    cursor: pointer;
+    background: radial-gradient(circle at 30% 30%, var(--planet-color), var(--planet-color-dark));
+    transition: transform 0.3s ease-in-out; /* Smooth transition for scaling */
+}
+.planet-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, var(--planet-color), var(--planet-color-dark));
+    box-shadow: inset -10px -10px 20px rgba(0,0,0,0.2), 0 0 10px var(--planet-color);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Apply scaling to the inner content when hovered */
+.planet:hover .planet-content {
+    transform: scale(1.2); /* Scale inner content */
+}
+
+.education { --planet-color: #4a90e2; --planet-color-dark: #2171c7; }
+.projects { --planet-color: #e74c3c; --planet-color-dark: #c0392b; }
+.work { --planet-color: #2ecc71; --planet-color-dark: #27ae60; }
+.skills { --planet-color: #9b59b6; --planet-color-dark: #8e44ad; }
+
+@keyframes shooting {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+     100% {
+        opacity: 0;
+        transform: translate(800px, -400px); /* Adjust movement as desired */
+    }
+}
+
+/* Overlay for planet content (initially hidden) */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 27, 42, 0.95); /* Semi-transparent dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.overlay.show {
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+.overlay-content {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 0 20px;
+    overflow-y: auto;
+    max-height: 80vh;
+    text-align: left; /* Change this to left-align all content */
+}
+
+.overlay-content h1 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 20px;
+    text-align: center; /* Keep the main title centered */
+}
+
+.overlay-content h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #4a90e2;
+}
+
+.overlay-content p {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.overlay-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.overlay-content ul li {
+    font-family: Arial, sans-serif;
+    margin-bottom: 5px;
+}
+
+/* Ensure paragraphs within list items are also left-aligned */
+.overlay-content ul li p {
+    text-align: left;
+}
+
+.backButton {
+    display: block;
+    margin: 20px auto 0;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.backButton:hover {
+    background-color: #555;
+}
+
+.project-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.project-list > li {
+    margin-bottom: 20px;
+}
+
+.project-list h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2em;
+    color: #4a90e2;
+    margin-bottom: 5px;
+}
+
+.project-list > li > p {
+    margin-bottom: 10px;
+}
+
+.project-list > li > ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.project-list > li > ul > li {
+    margin-bottom: 5px;
+}
+
+.github-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.github-link a {
+    color: #4a90e2;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.github-link a:hover {
+    color: #357abd;
+    text-decoration: underline;
+}
+
+#starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.sun:hover {
+    transform: scale(1.2); /* Scale the size by 20% when hovered */
+    transition: transform 0.3s ease; /* Smooth transition effect */
+}
+
