@@ -377,4 +377,25 @@ canvas {
     transition: transform 0.3s ease; /* Smooth transition effect */
 }
 
+@media (max-width: 768px) {
+    .orbit.education-orbit {
+        width: 30vw;  /* Smaller orbits for mobile */
+        height: 30vw;
+    }
+
+    .orbit.work-orbit {
+        width: 40vw;  /* Reduce the size of the work orbit */
+        height: 40vw;
+    }
+
+    .orbit.projects-orbit {
+        width: 50vw;  /* Reduce the size of the projects orbit */
+        height: 50vw;
+    }
+
+    .orbit.skills-orbit {
+        width: 60vw;  /* Reduce the size of the skills orbit */
+        height: 60vw;
+    }
+}
 
