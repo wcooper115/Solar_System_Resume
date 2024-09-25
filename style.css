@@ -117,7 +117,7 @@ canvas {
     width: 800px;
     height: 800px;
     z-index: 1; /* Solar system should be in front of stars */
-    transform: scale(0.75); /* Scale down to 75% of the original size */
+    transform: scale(0.60); /* Scale down to 75% of the original size */
     transform-origin: center; /* Ensure the scaling happens from the center */
 }
 
