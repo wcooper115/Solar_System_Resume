@@ -376,25 +376,5 @@ canvas {
     transform: scale(1.2); /* Scale the size by 20% when hovered */
     transition: transform 0.3s ease; /* Smooth transition effect */
 }
-/* Mobile adjustments: Apply smaller planets and sun on mobile screens */
-@media (max-width: 768px) {
-    .solar-system {
-        width: 85vw;  /* Slightly larger system to accommodate mobile screens */
-        height: 85vw;
-    }
 
-    .planet {
-        width: 5vw;  /* Smaller planets for mobile */
-        height: 5vw;
-        font-size: 1.2vw; /* Adjust text size accordingly */
-    }
-
-    .sun {
-        width: 8vw;  /* Make the sun smaller on mobile */
-        height: 8vw;
-        margin-left: -4vw;
-        margin-top: -4vw;
-        font-size: 1.4vw;
-    }
-}
 
