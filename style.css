@@ -114,8 +114,8 @@ canvas {
 /* Solar system container */
 .solar-system {
     position: relative;
-    width: 90vw;
-    height: 90vw;
+    width: 800px;
+    height: 800px;
     z-index: 1; /* Solar system should be in front of stars */
 }
 
@@ -376,7 +376,6 @@ canvas {
     transform: scale(1.2); /* Scale the size by 20% when hovered */
     transition: transform 0.3s ease; /* Smooth transition effect */
 }
-
 /* Mobile adjustments: Apply smaller planets and sun on mobile screens */
 @media (max-width: 768px) {
     .solar-system {
